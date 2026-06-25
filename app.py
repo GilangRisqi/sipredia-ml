@@ -9,7 +9,7 @@ import os
 
 app = Flask(__name__)
 
-# Hanya izinkan frontend milikmu
+
 CORS(
     app,
     resources={
@@ -29,18 +29,13 @@ limiter = Limiter(
 )
 
 # Memuat model Random Forest
-model_rf = joblib.load('model_prediksi_diabetes5.pkl')
+model_rf = joblib.load('model_prediksi_diabetes6.pkl')
 
 # Urutan fitur harus sama dengan saat training
 KOLOM_DATASET = [
-    'riwayat_darah_tinggi',
-    'riwayat_kolesterol',
-    'riwayat_jantung',
-    'kesehatan_berdasar_keluhan',
-    'kesehatan_buruk_sebulan',
-    'bmi',
-    'jenis_kelamin',
-    'kategori_umur'
+    'riwayat_darah_tinggi', 'riwayat_kolesterol', 'riwayat_jantung',
+    'kesehatan_berdasar_keluhan', 'kesehatan_buruk_sebulan', 'bmi',
+    'jenis_kelamin', 'kategori_umur'
 ]
 
 # Endpoint pengecekan server
